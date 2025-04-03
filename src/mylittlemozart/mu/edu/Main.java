@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
         try {
             // Step 1: Parse CSV into MIDI event data
-            List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("./files/mysterysong.csv");
+            List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("./files/mystery_song.csv");
 
             // Step 2: Create sequence and track
             Sequence sequence = new Sequence(Sequence.PPQ, 384);

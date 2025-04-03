@@ -1,5 +1,12 @@
 package mylittlemozart.mu.edu.factories;
 
-public class StandardMidiEventFactoryAbstract {
+/**
+ * Abstract factory that creates a StandardMidiEventFactory.
+ */
+public class StandardMidiEventFactoryAbstract implements MidiEventFactoryAbstract {
 
+    @Override
+    public MidiEventFactory createFactory() {
+        return new StandardMidiEventFactory();
+    }
 }

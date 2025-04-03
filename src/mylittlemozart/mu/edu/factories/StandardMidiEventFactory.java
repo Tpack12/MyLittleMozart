@@ -1,5 +1,23 @@
 package mylittlemozart.mu.edu.factories;
 
-public class StandardMidiEventFactory {
+import javax.sound.midi.*;
 
+/**
+ * Standard factory that creates Note On and Note Off events with no style adjustment.
+ */
+public class StandardMidiEventFactory implements MidiEventFactory {
+
+    @Override
+    public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
+        ShortMessage message = new ShortMessage();
+        message.setMessage(ShortMessage.NOTE_ON, channel, note, velocity);
+        return new MidiEvent(message, tick);
+    }
+
+    @Override
+    public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
+        ShortMessage message = new ShortMessage();
+        message.setMessage(ShortMessage.NOTE_OFF, channel, note, 0);
+        return new MidiEvent(message, tick);
+    }
 }

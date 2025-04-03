@@ -1,5 +1,6 @@
 package mylittlemozart.mu.edu.pitch;
 
-public class PitchStrategy {
-
+public interface PitchStrategy {
+    int modifyPitch(int note);  //Modifies the pitch note
 }
+

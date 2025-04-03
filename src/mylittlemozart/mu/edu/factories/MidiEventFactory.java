@@ -1,5 +1,9 @@
 package mylittlemozart.mu.edu.factories;
 
+<<<<<<< HEAD
+public abstract class MidiEventFactory {
+    public abstract MidiEvent createMidiEvent(int startTick, int note, int velocity, int duration);
+=======
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
 
@@ -30,4 +34,6 @@ public interface MidiEventFactory {
      * @throws InvalidMidiDataException if MIDI data is invalid
      */
     MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException;
+>>>>>>> b412fa3ca762df080e3012359e9bda4d0f5c7d67
 }
+

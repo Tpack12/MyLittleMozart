@@ -1,11 +1,13 @@
 package mylittlemozart.mu.edu.instrument;
 
+import javax.sound.midi.*;
+
 public class AcousticGrandPianoStrategy implements InstrumentStrategy {
     @Override
-    public void applyInstrument(Track track, int channel) {
-        //Set the instrument to Acoustic Grand Piano (MIDI instrument 0)
-        track.setInstrument(0);
-        System.out.println("Applying Acoustic Grand Piano (MIDI 0) to track on channel " + channel);
+    public void applyInstrument(Track track, int channel) throws InvalidMidiDataException {
+        ShortMessage message = new ShortMessage();
+        message.setMessage(ShortMessage.PROGRAM_CHANGE, channel, 0, 0);
+        MidiEvent event = new MidiEvent(message, 0);
+        track.add(event);
     }
 }
-
